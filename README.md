@@ -17,9 +17,11 @@
 [] - setup SQLite connection with Go project
 [] - finish bookstore functions
  [] - generalize purchasing for all store items
- [] - add func for updating stock
- [] - add func for adding new stock item
- [] - 
+ [x] - add func for updating stock
+ [x] - add func for adding new stock item
+ [x] - add func for updating price
+ [x] - add func for getting book stats
+ [] - <addt'l items?>
 [] - design TUI interface
 [] - implement TUI interface for Books first
 [] - implement TUI interface for remaining Bookstore Items
