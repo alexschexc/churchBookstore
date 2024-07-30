@@ -11,11 +11,14 @@
 ## Project ToDo list (ordered by priority):
 [x] - setup SQLite database on local machine
 [] - create SQLite database structure
+ [x] - books table created
+ [] - need tables for other product categories
 [] - populate SQLite database with current bookstore data
 [] - setup SQLite connection with Go project
 [] - finish bookstore functions
  [] - generalize purchasing for all store items
- [] - add func for 
+ [] - add func for updating stock
+ [] - add func for adding new stock item
  [] - 
 [] - design TUI interface
 [] - implement TUI interface for Books first
