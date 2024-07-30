@@ -1,8 +1,11 @@
 package bookstore
 
 import (
+	"database/sql"
 	"errors"
+	"fmt"
 	"github.com/gdamore/tcell/v2"
+	_ "github.com/mattn/go-sqlite3"
 	"github.com/rivo/tview"
 )
 
@@ -13,11 +16,21 @@ type Book struct {
 	Copies     int
 	PubVersion string
 	PubYear    string
+	Price      float64
 }
 type PrayerRope struct {
 	Steps        int
+	Material     string
 	Subdivisions string
 	Quantity     int
+}
+
+/*
+ other product Structs to added later
+*/
+
+func InitializeDatabase(dbPath string) (*sql.DB, error) {
+
 }
 
 func Buy(b Book) (Book, error) {
