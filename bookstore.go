@@ -36,7 +36,7 @@ func InitializeDatabase(dbPath string) (*sql.DB, error) {
 	}
 
 	// Ensure the books table has the correct schema
-	err = ensureSchema(db)
+	err = ensureBookSchema(db)
 	if err != nil {
 		return nil, err
 	}
@@ -45,9 +45,9 @@ func InitializeDatabase(dbPath string) (*sql.DB, error) {
 }
 
 // ensureSchema checks if the table exists and has the necessary columns.
-func ensureSchema(db *sql.DB) error {
+func ensureBookSchema(db *sql.DB) error {
 	// Create table if it doesn't exist
-	createTableQuery := "CREATE TABLE IF NOT EXISTS books (isbn TEXT PRIMARY KEY, title TEXT NOT NULL, author TEXT NOT NULL, copies INTEGER NOT NULL, pubversion TEXT NOT NULL, pubyear TEXT NOT NULL, price REAL);"
+	const createTableQuery string = `CREATE TABLE IF NOT EXISTS books (isbn TEXT PRIMARY KEY, title TEXT NOT NULL, author TEXT NOT NULL, copies INTEGER NOT NULL, pubversion TEXT NOT NULL, pubyear TEXT NOT NULL, price REAL);`
 	_, err := db.Exec(createTableQuery)
 	if err != nil {
 		return err
